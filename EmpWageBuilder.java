@@ -4,23 +4,29 @@ public class EmpWageBuilder {
 	
 	private static int empRatePerHours=20;
 	private static int isFullTime=1;
+	private static int isPartTime=0;
 	private static int salary=0;
 	
 	public static void emp(double x) {
 		
-		
+		int z=(int) x;
 		//condition check employee fulltime or parttime
-		if (x==isFullTime) {
-			System.out.println("employee is full time");
-			int empWorkingHours=8;
-			salary=( empWorkingHours  * empRatePerHours);
-		}else {
-			System.out.println("employee is parttime");
-			int empWorkingHours=4;
-			salary=( empWorkingHours  * empRatePerHours);
-		}
+	switch (z) {
+	case 1 :
+		System.out.println("employee is fulltime");
+		int empWorkingHour=8;
+		salary=(empWorkingHour*empRatePerHours);
+		break;
+	case 0 :
+		System.out.println("employee is parttime");
+		int empWorkingHour1=4;
+		salary=(empWorkingHour1*empRatePerHours);
+		break;
 		
-		
+	default :
+	    System.out.println("error");
+	    break;
+	}
 		System.out.println("salary = "+salary);
 	}
 
