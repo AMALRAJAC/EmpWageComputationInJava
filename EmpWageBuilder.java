@@ -1,21 +1,27 @@
 
 public class EmpWageBuilder {
 	
-	static int empRatePerHour = 20;
-	static int empWorkingHours = 8;
-	static int salary=0;
+	
+	private static int empRatePerHours=20;
+	private static int isFullTime=1;
+	private static int salary=0;
 	
 	public static void emp(double x) {
-		//condition check employee present or not
-		if (x==1) {
-			System.out.println("employee is present");
-			salary = ( empRatePerHour * empWorkingHours);
-			System.out.println("daily wage = " +salary);
+		
+		
+		//condition check employee fulltime or parttime
+		if (x==isFullTime) {
+			System.out.println("employee is full time");
+			int empWorkingHours=8;
+			salary=( empWorkingHours  * empRatePerHours);
 		}else {
-			System.out.println("employee is absent");
-			salary=0;
-			System.out.println("daily wage = " +salary);
+			System.out.println("employee is parttime");
+			int empWorkingHours=4;
+			salary=( empWorkingHours  * empRatePerHours);
 		}
+		
+		
+		System.out.println("salary = "+salary);
 	}
 
 	public static void main ( String[] args ) {
