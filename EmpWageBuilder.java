@@ -4,8 +4,11 @@ public class EmpWageBuilder {
 	
 	private static int empRatePerHours=20;
 	private static int salary=0;
-	private static int totalWorkingDays=20;
+	static int totalWorkingDays=0;
 	static int totalSalary=0;
+	static int totalEmpHours=0;
+	private static int numWorkingDays=20;
+	private static int maxHoursInMonth=10;
 	
 	public static void emp(double x) {
 		int z=(int) x;
@@ -15,11 +18,13 @@ public class EmpWageBuilder {
 		int empWorkingHour=8;
 		salary=(empWorkingHour*empRatePerHours);
 		totalSalary = totalSalary +salary;
+		totalEmpHours=totalEmpHours+empWorkingHour;
 		break;
 	case 0 :
 		int empWorkingHour1=4;
 		salary=(empWorkingHour1*empRatePerHours);
 		totalSalary = totalSalary +salary;
+		totalEmpHours=totalEmpHours+empWorkingHour1;
 		break;
 		
 	default :
@@ -30,7 +35,9 @@ public class EmpWageBuilder {
 	}
 
 	public static void main ( String[] args ) {
-		for(int day=0; day< totalWorkingDays;day++) {
+
+		while (totalEmpHours<maxHoursInMonth && totalWorkingDays<numWorkingDays) {
+			totalEmpHours++;
 		// take random numbers 1 or 0
 		double empCheck = Math.floor(Math.random()*10)%2 ;
 		//method call
