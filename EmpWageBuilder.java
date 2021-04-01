@@ -1,43 +1,33 @@
-
 public class EmpWageBuilder {
 	
 	
 	private static int empRatePerHours=20;
-	private static int isFullTime=1;
-	private static int isPartTime=0;
-	private static int salary=0;
-	
-	public static void emp(double x) {
-		
-		int z=(int) x;
-		//condition check employee fulltime or parttime
-	switch (z) {
-	case 1 :
-		System.out.println("employee is fulltime");
-		int empWorkingHour=8;
-		salary=(empWorkingHour*empRatePerHours);
-		break;
-	case 0 :
-		System.out.println("employee is parttime");
-		int empWorkingHour1=4;
-		salary=(empWorkingHour1*empRatePerHours);
-		break;
-		
-	default :
-	    System.out.println("error");
-	    break;
-	}
-		System.out.println("salary = "+salary);
-	}
+	static int empWorkingHour=0;
+	static int totalSalary=0;
+	static int salary=0;
+	 private static final int fullTime=2;
+	 private static final int partTime=1;
 
 	public static void main ( String[] args ) {
+
+				int empCheck =(int) Math.floor(Math.random()*10)%3 ;
 		
-		// take random numbers 1 or 0
-		double empCheck = Math.floor(Math.random()*10)%2 ;
-		
-		//method call
-		emp(empCheck);
+						switch (empCheck) {
+						case fullTime :
+							empWorkingHour=8;
+							
+							break;
+						case partTime :
+							empWorkingHour=4;
+							
+							break;
+							
+						default :
+						    empWorkingHour=0;
+						    break;
+						}
+	
+						salary=empWorkingHour*empRatePerHours;
+						System.out.println("salary= "+salary);
 	}
-	
-	
 }
