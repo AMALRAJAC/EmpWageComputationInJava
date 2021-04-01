@@ -8,7 +8,7 @@ public class EmpWageBuilder {
 
 	public static void main ( String[] args ) {
 
-				int empCheck =(int) Math.floor(Math.random()*10)%3 ;
+				int empCheck =(int) Math.floor(Math.random()*10)%2 ;
 	
 						if( isPresent ==empCheck) {
 							empWorkingHour=8;
