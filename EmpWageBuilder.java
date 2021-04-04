@@ -1,33 +1,28 @@
 public class EmpWageBuilder {
-	
-	
-	private static int empRatePerHours=20;
-	static int totalWorkingDays=0;
-	static int totalSalary=0;
-	static int totalEmpHours=0;
-	private static int numWorkingDays=20;
-	private static int maxHoursInMonth=100;
-	private static int empWorkingHour=0;
 	 private static final int fullTime=1;
 	 private static final int partTime=0;
-
+	 
 	public static void main ( String[] args ) {
-
-		while (totalEmpHours<maxHoursInMonth && totalWorkingDays<numWorkingDays) {
-				totalWorkingDays++;
-				int empCheck =(int) Math.floor(Math.random()*10)%3 ;
-				
-				empWage(empCheck);
+		String company;
+		EmpWageBuilder c1= new EmpWageBuilder();
+		c1.EmpWageBuilder("dmart",25,100,20);
+		c1.EmpWageBuilder("bigbazar",20,150,30);
+		c1.EmpWageBuilder("reliance mart",30,80,50);
 		
-		}
-	
-		totalSalary = totalEmpHours *empRatePerHours;
-		System.out.println("total salary for a month = "+totalSalary);
-	
 	}
-	public static void empWage(int x) {
+	public void EmpWageBuilder(String company,int numWorkingDays,int maxHoursInMonth,int empRatePerHours ) {
 		
-		switch (x) {
+		
+		int totalWorkinDays=0;
+		int totalSalary=0;
+		int totalEmpHours=0;
+		int empWorkingHour=0;
+		int totalWorkingDays=0;
+		while (totalEmpHours<maxHoursInMonth && totalWorkingDays<numWorkingDays) {
+			totalWorkingDays++;
+			int empCheck =(int) Math.floor(Math.random()*10)%3 ;
+
+		switch (empCheck) {
 		case fullTime :
 			empWorkingHour=8;
 			
@@ -41,10 +36,13 @@ public class EmpWageBuilder {
 		    empWorkingHour=0;
 		    break;
 		}
-		
-
-
 		totalEmpHours=totalEmpHours+empWorkingHour;
 		
+
+		}
+		
+		totalSalary = totalEmpHours *empRatePerHours;
+		System.out.println("total salary= "+totalSalary);
+		System.out.println("total salery for "+company+ " is "+totalSalary);
 	}
 }
